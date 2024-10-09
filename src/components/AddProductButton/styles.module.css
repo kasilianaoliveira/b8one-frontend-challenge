@@ -1,0 +1,30 @@
+.button-base{
+  border: none;
+  padding: 12px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 100%;
+  font-weight: 700;
+  font-size: 1rem;
+  text-transform:uppercase;
+
+}
+.button-add{
+  background: var(--green-400);
+  color: var(--white);
+  transition: background 0.3s ease-in-out;
+
+  &:hover {
+    background: var(--green-600);
+  }
+}
+
+.button-added{
+  background: var(--green-100);
+  color: var(--grey-900);
+  transition: background 0.3s ease-in-out;
+
+  &:hover {
+    filter: brightness(90%);
+  }
+}
