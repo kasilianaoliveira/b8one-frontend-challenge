@@ -1,35 +1,16 @@
-import { useState } from 'react'
+import { useContext, useState } from 'react'
 import { productsMock } from '../../mock/productsMock'
 import { CardProduct } from '../CardProduct'
 import styles from './styles.module.css'
 import { IProductProps } from '../../types/product'
+import { CartContext } from '../../context/cartContext'
+import { FavoriteContext } from '../../context/favoriteContext'
+import { ToastContainer, toast } from 'react-toastify';
 
 export const Products = () => {
-  const [addProduct, setAddProduct] = useState<IProductProps[]>([])
-  const [favorites, setFavorites] = useState<IProductProps[]>([])
 
-  const handleAddProduct = (product: IProductProps) => {
-    setAddProduct((prevState) => {
-      const isProductInCart = prevState.some((item) => item.id === product.id);
-
-      if (isProductInCart) {
-        return prevState;
-      }
-      const updatedCart = [...prevState, product];
-      return updatedCart;
-    })
-  }
-  const handleFavoriteProduct = (product: IProductProps) => {
-    setFavorites((prevFavorites) => {
-      const isProductInFavorites = prevFavorites.some((item) => item.id === product.id);
-
-      if (isProductInFavorites) {
-        const updatedFavorites = prevFavorites.filter((item) => item.id!== product.id);
-        return updatedFavorites;
-      }
-      return [...prevFavorites, product];
-    });
-  };
+  const { addProductToCart } = useContext(CartContext)
+  const { addProductToFavorites } = useContext(FavoriteContext)
 
   return (
     <div className={styles['products-container']}>
@@ -37,12 +18,11 @@ export const Products = () => {
         <CardProduct
           key={product.id}
           product={product}
-          addProduct={addProduct}
-          favorites={favorites}
-          handleAddProduct={handleAddProduct}
-          handleFavoriteProduct={handleFavoriteProduct}
+          handleAddProduct={() => addProductToCart(product)}
+          handleFavoriteProduct={() => addProductToFavorites(product)}
         />
       ))}
+
     </div>
   )
 }

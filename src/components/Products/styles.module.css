@@ -3,12 +3,14 @@
   align-items: center;
   justify-content: center;
   gap: 8rem;
-  height: 100vh;
+  max-width: 1200px;
+  margin: 0 auto;
   padding: 20px;
+  height: calc(100vh - 62px);
 
   @media (max-width: 768px) {
     gap: 2rem;
     height: auto;
-    flex-direction: column; 
+    flex-direction: column;
   }
 }
