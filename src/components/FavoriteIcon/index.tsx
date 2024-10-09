@@ -1,43 +1,37 @@
 import { HeartFilled, HeartOutlined } from "@ant-design/icons"
-import { useState } from "react";
+import { FC } from "react";
 import styles from './styles.module.css'
-export const FavoriteIcon = () => {
-  const [isFavorited, setIsFavorited] = useState(false);
+import { FavoriteProductCardProps } from "../../types/favoriteProduct";
 
+export const FavoriteIcon: FC<FavoriteProductCardProps> = ({ product, favorites, handleFavoriteProduct }) => {
 
-  const addToFavorites = () => {
-    setIsFavorited(!isFavorited)
-    // setFavorites((prevFavorites) => {
-    //   if (prevFavorites.some((item) => item.id === product.id)) {
-    //     return prevFavorites; 
-    //   }
-    //   return [...prevFavorites, product];
-    // });
-  };
+  const isProductFavorited = (productId: string) => {
+    return favorites.some((item) => item.id === productId);
+  }
   return (
     <>
       {
-          isFavorited ? (
-            <HeartFilled
-              onClick={addToFavorites}
-              style={{
-                fontSize: '21px',
+        isProductFavorited(product.id) ? (
+          <HeartFilled
+            onClick={() => handleFavoriteProduct(product)}
+            style={{
+              fontSize: '21px',
 
-              }}
-              className={
-                `${styles['favorite-icon']} ${styles['favorite-icon--filled']}`
-              }
-            />
+            }}
+            className={
+              `${styles['favorite-icon']} ${styles['favorite-icon--filled']}`
+            }
+          />
 
-          ) : (
-            <HeartOutlined
-              onClick={addToFavorites}
-              style={{ fontSize: '21px' }}
-              className={
-                `${styles['favorite-icon']} ${styles['favorite-icon--outlined']}`
-              } />
-          )
-        }
+        ) : (
+          <HeartOutlined
+            onClick={() => handleFavoriteProduct(product)}
+            style={{ fontSize: '21px' }}
+            className={
+              `${styles['favorite-icon']} ${styles['favorite-icon--outlined']}`
+            } />
+        )
+      }
     </>
   )
 }
