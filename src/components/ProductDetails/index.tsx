@@ -1,4 +1,5 @@
 import { IProductDetailsProps } from '../../types/productDetails';
+import { formatToLocaleString } from '../../utils/formatToLocaleString';
 import styles from './styles.module.css'
 
 export const ProductDetails = ({
@@ -6,10 +7,11 @@ export const ProductDetails = ({
   originalPrice,
   salePrice,
 }: IProductDetailsProps) => {
-
-  const originalPriceConverted = originalPrice.toLocaleString('pt-br', { style: 'decimal', minimumFractionDigits: 2 });
-  const salePriceConverted = salePrice.toLocaleString('pt-br', { style: 'decimal', minimumFractionDigits: 2 });
-  const priceInstallment = (salePrice / 10).toLocaleString('pt-br', { style: 'decimal', minimumFractionDigits: 2 });
+  const INSTALLMENTS_COUNT = 10;
+  
+  const originalPriceConverted = formatToLocaleString(originalPrice);
+  const salePriceConverted = formatToLocaleString(salePrice);
+  const priceInstallment = formatToLocaleString((salePrice / INSTALLMENTS_COUNT))
 
   return (
     <div className={styles['info-content']}>
