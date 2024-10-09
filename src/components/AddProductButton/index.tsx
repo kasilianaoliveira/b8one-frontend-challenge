@@ -12,8 +12,16 @@ export const AddProductButton: React.FC<AddProductButtonProps> = ({
       onClick={onClick}
       className={`${styles['button-base']} ${isAddButton ? styles['button-add'] : styles['button-added']}`}
     >
-
-      <CheckOutlined /> {label}
+      {
+        isAddButton ? (
+          <span>{label}</span>
+        ) : (
+          <span>
+            <CheckOutlined /> {label}
+          </span>
+        )
+      }
+      
     </button>
   );
 };
