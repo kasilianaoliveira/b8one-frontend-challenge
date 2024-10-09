@@ -1,23 +1,26 @@
 import styles from './styles.module.css';
-import { FavoriteIcon } from "../FavoriteIcon";
-import { ProductDetails } from "../ProductDetails";
-import { AddProductButton } from "../AddProductButton";
-import { FC } from 'react';
+import { FavoriteIcon } from '../FavoriteIcon';
+import { ProductDetails } from '../ProductDetails';
+import { AddProductButton } from '../AddProductButton';
+import { FC, useContext } from 'react';
 import { CardProductProps } from '../../types/cardProduct';
+import { CartContext } from '../../context/cartContext';
+import { FavoriteContext } from '../../context/favoriteContext';
+import { notification } from '../../utils/notification';
 
 
 export const CardProduct: FC<CardProductProps> = ({
   product,
-  addProduct,
-  favorites,
   handleAddProduct,
   handleFavoriteProduct
 }) => {
+  const { products } = useContext(CartContext)
+  const { favorites } = useContext(FavoriteContext)
+
 
   const isProductAdded = (productId: string) => {
-    return addProduct.some((item) => item.id === productId);
+    return products.some((item) => item.id === productId);
   }
-
 
   return (
     <div className={styles.container}>
@@ -38,7 +41,11 @@ export const CardProduct: FC<CardProductProps> = ({
       {
         !isProductAdded(product.id) ? (
           <AddProductButton
-            onClick={() => handleAddProduct(product)}
+            onClick={() => {
+              handleAddProduct(product)
+              notification('Produto adicionado ao carrinho!')
+            }}
+
             isAddButton={true}
             label="Adicionar" />
         ) : (
