@@ -1,11 +1,9 @@
-import { useContext, useState } from 'react'
+import { useContext } from 'react'
 import { productsMock } from '../../mock/productsMock'
 import { CardProduct } from '../CardProduct'
 import styles from './styles.module.css'
-import { IProductProps } from '../../types/product'
 import { CartContext } from '../../context/cartContext'
 import { FavoriteContext } from '../../context/favoriteContext'
-import { ToastContainer, toast } from 'react-toastify';
 
 export const Products = () => {
 

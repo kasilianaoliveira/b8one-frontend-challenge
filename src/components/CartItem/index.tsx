@@ -1,5 +1,4 @@
 import { FC, useContext } from 'react';
-import { IProductProps } from '../../types/product';
 import { formatToLocaleString } from '../../utils/formatToLocaleString';
 import styles from './styles.module.css';
 import { CloseOutlined, MinusOutlined, PlusOutlined } from '@ant-design/icons';
