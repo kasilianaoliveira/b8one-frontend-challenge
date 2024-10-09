@@ -9,7 +9,9 @@
   --transparent: #dededeb3;
 
   --gray-200:#F2F3F6;
+  --grey-300:#E9EBEE;
   --gray-600: #B5B5B6;
+  --gray-700: #737375;
   --gray-900: #1C1C1C;
 
   --pink-100:#FEE5EC;
@@ -25,11 +27,16 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Inter", serif;
 }
 
 html,
 body {
   height: 100%;
+}
+body {
+  background: var(--grey-300);
+  color: var(--gray-900);
 }
 
 a {
@@ -55,4 +62,12 @@ select {
 img {
   max-width: 100%;
   display: block;
+}
+
+.App{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
 }
