@@ -1,9 +1,9 @@
 import { CheckOutlined } from '@ant-design/icons';
-import { AddProductButtonProps } from '../../types/productButton';
-import styles from './styles.module.css'
+import styles from  './styles.module.css'
+import { IAddProductButtonProps } from '../../types/productButton';
 
 
-export const AddProductButton: React.FC<AddProductButtonProps> = ({
+export const AddProductButton: React.FC<IAddProductButtonProps> = ({
   onClick,
   label,
   isAddButton = false }) => {
