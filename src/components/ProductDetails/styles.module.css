@@ -1,0 +1,44 @@
+
+.info-content {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.title {
+  font-size: .875rem;
+  line-height: 1.5;
+  font-weight: 700;
+  margin-bottom: 24px;
+  text-align: start;
+  margin: 0;
+}
+
+.pricing-details{
+  display: flex;
+  flex-direction: column;
+  gap:.25rem;
+}
+
+.original-price {
+  font-weight: 500;
+  font-size: .875rem;
+  color: var(--gray-600);
+  text-decoration: line-through;
+  position: relative;
+}
+.promotional-price {
+  font-size: 1.25rem;
+  color: var(--red-500);
+  font-weight: 600;
+}
+
+.installments{
+  font-size: .75rem;
+  font-weight: 500;
+  color: var(--gray-700);
+}
+
+.quantity{
+  color: var(--gray-900)
+}
