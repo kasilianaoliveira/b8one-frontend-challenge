@@ -1,9 +1,11 @@
+import { Products } from "./components/Products"
+import './global.css'
 function App() {
 
   return (
-    <div className='App'>
-      <h1>Hello</h1>
-    </div>
+    <main className='App'>
+      <Products/>
+    </main>
   )
 }
 
