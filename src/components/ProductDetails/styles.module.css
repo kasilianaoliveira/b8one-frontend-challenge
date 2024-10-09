@@ -12,6 +12,11 @@
   margin-bottom: 24px;
   text-align: start;
   margin: 0;
+
+
+  @media (max-width: 480px) {
+    font-size: 12px;
+  }
 }
 
 .pricing-details{
@@ -26,11 +31,18 @@
   color: var(--gray-600);
   text-decoration: line-through;
   position: relative;
+  @media (max-width: 480px) {
+    font-size: .75rem;
+  }
 }
 .promotional-price {
   font-size: 1.25rem;
   color: var(--red-500);
   font-weight: 600;
+
+  @media (max-width: 480px) {
+    font-size: 1rem;
+  }
 }
 
 .installments{

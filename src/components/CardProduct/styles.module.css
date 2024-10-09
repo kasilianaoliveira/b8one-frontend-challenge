@@ -26,5 +26,10 @@
   width:240px;
   height: 240px;
   object-fit: contain;
+
+  @media (max-width: 480px) {
+    width:200px;
+    height: 200px;
+  }
 }
 

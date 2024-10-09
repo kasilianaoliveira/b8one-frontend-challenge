@@ -1,4 +1,14 @@
 .products-container {
   display: flex;
+  align-items: center;
+  justify-content: center;
   gap: 8rem;
+  height: 100vh;
+  padding: 20px;
+
+  @media (max-width: 768px) {
+    gap: 2rem;
+    height: auto;
+    flex-direction: column; 
+  }
 }
