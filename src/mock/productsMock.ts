@@ -3,9 +3,9 @@ import { IProductProps } from "../types/product";
 export const productsMock:IProductProps[] = [
   {
     id: "ef9beb4093d12647b33fe2cddeac9bfbd601ac22",
-    title: "Smartphone Apple iPhone 13 128GB 5G 6.1\" Screen Dual Chip 12MP Dual Camera - Black",
-    originalPrice: 3799.00,
-    salePrice: 3599.00,
+    title: "Smartphone Samsung Galaxy A05 128GB 4G Wi-Fi Tela 6.7\" Dual Chip 4GB RAM Câmera Dupla + Selfie 8MP - Prata",
+    originalPrice: 749.00,
+    salePrice: 674.10,
     image: "assets/product-01.webp" 
   },
   {
