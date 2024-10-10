@@ -48,6 +48,11 @@ Este projeto foi desenvolvido como parte de um desafio técnico de frontend da B
     - Comentário em pull request mostrando coverage de testes
     - Rodar o build
 
+### Imagem de demonstração do github action
+
+ <p align="left">
+    <img src="public/assets/image-04.png" alt="Image" width="600px">
+</p>
 
 ### Imagens da aplicação
 
