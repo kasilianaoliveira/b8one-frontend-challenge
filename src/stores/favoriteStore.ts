@@ -1,16 +1,7 @@
 import { create } from 'zustand';
 import { persist, createJSONStorage } from 'zustand/middleware';
-import { IProductProps } from '../types/product';
+import { FavoriteStoreState } from './types';
 
-interface FavoriteStoreState {
-  favorites: IProductProps[];
-  isVisible: boolean;
-  addProductToFavorites: (product: IProductProps) => void;
-  removeProductFromFavorites: (productId: string) => void;
-  toggleFavoriteVisibility: () => void;
-  clearFavorites: () => void;
-  isProductInFavorites: (productId: string) => boolean
-}
 
 export const useFavoriteStore = create<FavoriteStoreState>()(
   persist(

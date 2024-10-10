@@ -2,6 +2,8 @@ import { IProductProps } from './product';
 
 export interface CardProductProps {
   product: IProductProps;
-  handleAddProduct: (product: IProductProps) => void;
-  handleFavoriteProduct: (product: IProductProps) => void;
+  handleAddToCart: (product: IProductProps) => void;
+  handleRemoveFromCart: (productId: string) => void;
+  handleAddToFavorites: (product: IProductProps) => void;
+  handleRemoveFromFavorites: (productId: string) => void;
 }

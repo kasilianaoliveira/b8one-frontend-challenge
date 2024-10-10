@@ -1,21 +1,7 @@
 import { create } from 'zustand';
 import { persist, createJSONStorage } from 'zustand/middleware';
-import { Cart } from '../types/cart';
-import { IProductProps } from '../types/product';
+import { CartStoreState } from './types';
 
-interface CartStoreState {
-  cart: Cart[];
-  productsTotalPrice: number;
-  productCount: number;
-  isCartVisible: boolean; 
-  addToCart: (product: IProductProps) => void;
-  removeProductFromCart: (productId: string) => void;
-  decreaseProductQuantity: (productId: string) => void;
-  clearCart: () => void;
-  updateTotalPriceAndCount: () => void;
-  toggleCart: () => void; 
-  isProductInCart: (productId: string) => boolean;
-}
 
 export const useCartStore = create<CartStoreState>()(
   persist(
