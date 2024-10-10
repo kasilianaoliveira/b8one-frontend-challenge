@@ -11,7 +11,7 @@
 ![javascript][JAVASCRIPT__BADGE]
 
 <p align="center">
- <a href="#about">About</a> • 
+ <a href="#about">Sobre</a> • 
  <a href="#started">Getting Started</a> 
 </p>
 
@@ -32,7 +32,7 @@ Este projeto foi desenvolvido como parte de um desafio técnico de frontend da B
 </p>
 
 
-<h2 id="started">🚀 Getting started 🚀</h2>
+<h2 id="started">🚀 Começando 🚀</h2>
 
 <h3>Pré-requisitos</h3>
 
