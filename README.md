@@ -41,14 +41,14 @@ Este projeto foi desenvolvido como parte de um desafio técnico de frontend da B
     - Adicionar produto dos favoritos
     - Remover produto dos favoritos
 
-- Adicionado github action onde verifica:
+- Adicionado github actions onde verifica:
     - Instalação das dependências
     - Rodar testes
     - Verificar coverage de testes
     - Comentário em pull request mostrando coverage de testes
     - Rodar o build
 
-### Imagem de demonstração do github action
+### Imagem de demonstração do github actions
 
  <p align="left">
     <img src="public/assets/image-04.png" alt="Image" width="600px">
