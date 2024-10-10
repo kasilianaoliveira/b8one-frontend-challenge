@@ -67,3 +67,5 @@ pnpm dev
 - Antd icons
 - Zustand
 - React Toast
+- Vitest
+- React Testing Library
