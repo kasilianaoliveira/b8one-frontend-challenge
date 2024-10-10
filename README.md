@@ -65,5 +65,5 @@ pnpm dev
 - Typescript
 - Vite
 - Antd icons
-- Context API
+- Zustand
 - React Toast
