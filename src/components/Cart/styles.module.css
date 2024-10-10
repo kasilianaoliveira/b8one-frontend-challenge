@@ -30,6 +30,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  margin-top:20px;
 
   button {
     background-color: var(--blue-900);
@@ -51,7 +52,7 @@
   overflow-y: scroll;
   position: absolute;
   top: 0;
-  
+
   @media (max-width: 800px) {
     max-width: 100%;
   }
