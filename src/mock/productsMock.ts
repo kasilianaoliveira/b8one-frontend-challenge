@@ -15,4 +15,12 @@ export const productsMock:IProductProps[] = [
     salePrice: 2599.00,
     image: "assets/product-02.webp"
   },
+
+  {
+    id: "85r27210e118aff30f4874d0e37cbad30b3a6fd2",
+    title: "Notebook Dell Inspiron I15-I120K-M25P 15.6\" Full HD 12ª Geração Intel Core i5 8GB 512GB SSD Windows 11 Preto",
+    originalPrice: 3759.00,
+    salePrice: 3459.00,
+    image: "assets/product-03.webp"
+  },
 ];
