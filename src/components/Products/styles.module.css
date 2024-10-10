@@ -1,16 +1,21 @@
 .products-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 7.75rem;
   max-width: 1200px;
   margin: 0 auto;
   padding: 20px;
-  height: calc(100vh - 62px);
+  height: auto;
 
   @media (max-width: 768px) {
+    justify-items: center;
+    grid-template-columns: repeat(2, 1fr);
     gap: 2rem;
-    height: auto;
-    flex-direction: column;
+  }
+
+  @media (max-width: 480px) {
+    gap: 1rem;
+    width: 100%;
+    grid-template-columns: repeat(1, 1fr);
   }
 }
