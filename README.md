@@ -12,7 +12,7 @@
 
 <p align="center">
  <a href="#about">Sobre</a> • 
- <a href="#started">Getting Started</a> 
+ <a href="#started">Começando</a> 
 </p>
 
 <p align="center">
