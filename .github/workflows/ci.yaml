@@ -12,8 +12,8 @@ jobs:
         with:
           node-version: 20.
       - name: Install dependencies
-        run: pnpm install
+        run: npm install
       - name: Run tests
-        run: pnpm test
+        run: npm run test
       - name: Run build
-        run: pnpm build
+        run: npm run build
