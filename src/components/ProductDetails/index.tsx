@@ -15,12 +15,12 @@ export const ProductDetails = ({
 
   return (
     <div className={styles['info-content']}>
-      <h1 className={styles.title}>{title}</h1>
+      <h1 className={styles.title} data-testid='product-title'>{title}</h1>
       <div className={styles['pricing-details']}>
-        <p className={styles['original-price']}>
+        <p className={styles['original-price']}  data-testid='product-price'>
           R$ {originalPriceConverted}
         </p>
-        <p className={styles['promotional-price']}>
+        <p className={styles['promotional-price']}  data-testid='product-price-promotional'>
           R$ {salePriceConverted}
         </p>
         <p className={styles.installments}>

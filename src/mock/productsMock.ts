@@ -10,7 +10,7 @@ export const productsMock:IProductProps[] = [
   },
   {
     id: "97f27210e118aff30f4874d0e37cbad30b3a6fd2",
-    title: "Monitor LED 27'' Gamer Curvo Samsung  1920 x 1080 FHD 240 Hz HDMI, DP, Gsync Série CRG50",
+    title: "Monitor LED 27' Gamer Curvo Samsung  1920 x 1080 FHD 240 Hz HDMI, DP, Gsync Série CRG50",
     originalPrice: 2813.99,
     salePrice: 2599.00,
     image: "assets/product-02.webp"
