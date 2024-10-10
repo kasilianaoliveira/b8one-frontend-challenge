@@ -46,7 +46,6 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-top:20px;
 
   button {
     background-color: var(--blue-900);
