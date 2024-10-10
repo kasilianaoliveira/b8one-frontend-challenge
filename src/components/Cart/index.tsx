@@ -3,9 +3,10 @@ import { CartItem } from '../CartItem'
 import styles from './styles.module.css'
 import { formatToLocaleString } from '../../utils/formatToLocaleString'
 import { useCartStore } from '../../stores/cartStore'
+import { CloseOutlined } from '@ant-design/icons'
 
 export const CartComponent = () => {
-  const { 
+  const {
     cart,
     productsTotalPrice,
     productCount,
@@ -23,7 +24,15 @@ export const CartComponent = () => {
     <div className={`${styles['cart-container']} ${isCartVisible && styles['cart-visibility']}`}>
       <div className={styles['cart-escape-area']} onClick={toggleCart} />
       <div className={styles['cart-content']}>
-        <h3 className={styles['cart-title']}>Seu Carrinho</h3>
+        <div className={styles['cart-content-title']}>
+          <h3 className={styles['cart-title']}>Seu Carrinho</h3>
+          <button
+            className={styles['cart-item-button']}
+            onClick={toggleCart}
+          >
+            <CloseOutlined />
+          </button>
+        </div>
         {
           cart.map(product => (
             <CartItem

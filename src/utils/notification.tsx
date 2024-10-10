@@ -3,7 +3,7 @@ import { toast } from "react-toastify";
 export const notification = (message: string) => {
   toast.success(message, {
     position: "bottom-right",
-    autoClose: 3000,
+    autoClose: 1000,
     hideProgressBar: false,
     closeOnClick: true,
     pauseOnHover: true,
