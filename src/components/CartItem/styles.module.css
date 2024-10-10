@@ -13,10 +13,10 @@
 .cart-item-image {
   height: 7.5rem;
   width: 7.5rem;
-  object-fit: cover;
+  object-fit: contain;
 
   @media (max-width: 480px) {
-    width: 80px;
+    width: 60px;
   }
 }
 
