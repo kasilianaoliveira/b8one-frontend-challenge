@@ -1,4 +1,4 @@
-import { IProductProps } from "../types/product";
+import type { IProductProps } from "../types/product";
 
 export const productsMock:IProductProps[] = [
   {

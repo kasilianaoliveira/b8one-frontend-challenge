@@ -91,4 +91,36 @@ describe('Products Component', () => {
     expect(removeFavoriteButton).toBeInTheDocument();
   });
 
+  test('should call removeFromCart when remove button is clicked', async () => {
+    renderComponent(<Products />);
+    
+    const product = await screen.findByText('Smartphone Samsung Galaxy A05 128GB 4G Wi-Fi Tela 6.7" Dual Chip 4GB RAM Câmera Dupla + Selfie 8MP - Prata');
+    const addButtons = await screen.findAllByRole('button', { name: /Adicionar/i });
+    
+    expect(product).toBeInTheDocument();
+    expect(addButtons.length).toBeGreaterThan(0);
+    fireEvent.click(addButtons[0]);
+    
+    expect(addButtons[0]).toHaveTextContent('Adicionado');
+    
+    fireEvent.click(addButtons[0]);
+  
+    expect(addButtons[0]).toHaveTextContent('Adicionar');
+  });
+  
+  test('should call removeProductFromFavorites when remove favorite button is clicked', async () => {
+    renderComponent(<Products />);
+    
+    const product = await screen.findByText('Smartphone Samsung Galaxy A05 128GB 4G Wi-Fi Tela 6.7" Dual Chip 4GB RAM Câmera Dupla + Selfie 8MP - Prata');
+    expect(product).toBeInTheDocument();
+
+    const removeFavoriteButton = await screen.findByText('Adicionado');
+    expect(removeFavoriteButton).toBeInTheDocument();
+    fireEvent.click(removeFavoriteButton);
+
+    const favoriteButton = await screen.findAllByTestId('favorite-product-add');
+    expect(favoriteButton.length).toBeGreaterThan(0);
+
+  });
+
 })
