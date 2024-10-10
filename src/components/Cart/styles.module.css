@@ -44,13 +44,14 @@
 
 .cart-content {
   z-index: 200;
-  height: 100vh;
+  height: 100%;
   width: 600px;
   background-color: var(--white);
   padding: 20px;
   overflow-y: scroll;
   position: absolute;
-
+  top: 0;
+  
   @media (max-width: 800px) {
     max-width: 100%;
   }
