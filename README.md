@@ -19,9 +19,9 @@
     <img src="public/assets/image-01.png" alt="Home" width="700px">
 </p>
 
-<h2 id="started">📌 About</h2>
+<h2 id="started">📌 Sobre 📌</h2>
 
-Projeto desenvolvido para um desafio técnico frontend da b8one
+Este projeto foi desenvolvido como parte de um desafio técnico de frontend da B8one. Ele permite que os usuários realizem diversas ações, incluindo adicionar itens ao carrinho, adicionar produtos aos favoritos e visualizar tanto os itens do carrinho quanto os favoritos. Além disso, o projeto foi desenvolvido com foco na responsividade, garantindo uma experiência de usuário fluida e agradável em diferentes dispositivos, desde desktops até dispositivos móveis.
 
 - [Clique aqui para acessar o site](https://b8one-frontend-challenge.vercel.app/)
  <p align="center">
@@ -32,16 +32,16 @@ Projeto desenvolvido para um desafio técnico frontend da b8one
 </p>
 
 
-<h2 id="started">🚀 Getting started</h2>
+<h2 id="started">🚀 Getting started 🚀</h2>
 
-<h3>Prerequisites</h3>
+<h3>Pré-requisitos</h3>
 
 Aqui você lista todos os pré-requisitos necessários para executar seu projeto.
 
 - [NodeJS](https://github.com/)
 - [Git 2](https://github.com)
 
-<h3>Cloning</h3>
+<h3>Clone</h3>
 
 Como clonar o projeto
 
@@ -49,7 +49,7 @@ Como clonar o projeto
 git clone https://github.com/kasilianaoliveira/b8one-frontend-challenge
 ```
 
-<h3>Starting</h3>
+<h3>Comandos para rodar o projeto</h3>
 
 Como iniciar o projeto
 
