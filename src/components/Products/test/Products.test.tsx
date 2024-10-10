@@ -75,8 +75,6 @@ describe('Products Component', () => {
     fireEvent.click(addButtons[0]);
 
     expect(addButtons[0]).toHaveTextContent('Adicionado');
-    console.log(document.body.innerHTML)
-
 
   });
   test('should call addProductToFavorites when favorite button is clicked', async () => {
