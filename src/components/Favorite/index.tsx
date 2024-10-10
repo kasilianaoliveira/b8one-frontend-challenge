@@ -2,9 +2,19 @@ import styles from './styles.module.css'
 import { FavoriteItem } from '../FavoriteItem'
 import { useFavoriteStore } from '../../stores/favoriteStore'
 import { CloseOutlined } from '@ant-design/icons';
+import { useEffect } from 'react';
 export const Favorite = () => {
 
   const { toggleFavoriteVisibility, favorites, isVisible, removeProductFromFavorites } = useFavoriteStore();
+  useEffect(() => {
+    isVisible ?
+      document.body.style.overflow = 'hidden' :
+      document.body.style.overflow = '';
+
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [isVisible]);
 
   return (
 

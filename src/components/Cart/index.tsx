@@ -1,4 +1,4 @@
-import { memo } from 'react'
+import { memo, useEffect } from 'react'
 import { CartItem } from '../CartItem'
 import styles from './styles.module.css'
 import { formatToLocaleString } from '../../utils/formatToLocaleString'
@@ -18,6 +18,16 @@ export const CartComponent = () => {
   } = useCartStore();
 
   const filterPrice = formatToLocaleString(productsTotalPrice)
+
+  useEffect(() => {
+    isCartVisible ?
+      document.body.style.overflow = 'hidden' :
+      document.body.style.overflow = '';
+
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [isCartVisible]);
 
   return (
 

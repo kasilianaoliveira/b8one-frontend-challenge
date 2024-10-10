@@ -1,26 +1,26 @@
 :root {
   --white: #ffffff;
   --black: #000000;
-  
-  --blue-900: #181D29;
 
-  --green-100:#A3F9B9;
-  --green-400: #40B25C;
-  --green-600: #1C6C3E;
-  
+  --blue-900: #181d29;
+
+  --green-100: #a3f9b9;
+  --green-400: #40b25c;
+  --green-600: #1c6c3e;
+
   --transparent: #dededeb3;
 
-  --gray-200:#F2F3F6;
-  --grey-300:#E9EBEE;
-  --gray-600: #B5B5B6;
+  --gray-200: #f2f3f6;
+  --grey-300: #e9ebee;
+  --gray-600: #b5b5b6;
   --gray-700: #737375;
-  --gray-900: #1C1C1C;
+  --gray-900: #1c1c1c;
 
-  --pink-100:#FEE5EC;
- --red-500: #DA4B4F;
- --red-600: #C22539;
+  --pink-100: #fee5ec;
+  --red-500: #da4b4f;
+  --red-600: #c22539;
 
-  --error: #FF6A6A;
+  --error: #ff6a6a;
 
   --success: #198754;
 }
@@ -29,7 +29,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Inter", serif;
+  font-family: 'Inter', serif;
 }
 
 html,
