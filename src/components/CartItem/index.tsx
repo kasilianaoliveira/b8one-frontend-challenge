@@ -1,18 +1,18 @@
-import { FC, useContext } from 'react';
+import { FC, memo } from 'react';
 import { formatToLocaleString } from '../../utils/formatToLocaleString';
 import styles from './styles.module.css';
 import { CloseOutlined, MinusOutlined, PlusOutlined } from '@ant-design/icons';
-import { CartContext } from '../../context/cartContext';
-import { Cart } from '../../types/cart';
 import { notification } from '../../utils/notification';
+import { IProductProps } from '../../types/product';
+import { ICartItemProps } from '../../types/cartItem';
 
-interface ICartItemProps {
-  product: Cart;
-}
 
-export const CartItem: FC<ICartItemProps> = ({ product }) => {
+export const CartItemComponent: FC<ICartItemProps> = ({
+  product,
+  handleAddToCart,
+  handleRemoveFromCart,
+  decreaseProductQuantity }) => {
   const salePriceConverted = formatToLocaleString(product.salePrice)
-  const { decreaseProductQuantity, addProductToCart, removeProductFromCart } = useContext(CartContext)
 
   return (
     <div className={styles['cart-item-container']}>
@@ -26,14 +26,14 @@ export const CartItem: FC<ICartItemProps> = ({ product }) => {
         <div className={styles['cart-item-quantity']}>
           <MinusOutlined onClick={() => decreaseProductQuantity(product.id)} />
           <p>{product.quantity}</p>
-          <PlusOutlined onClick={() => addProductToCart(product)} />
+          <PlusOutlined onClick={() => handleAddToCart(product)} />
         </div>
       </div>
 
       <button
         className={styles['cart-item-button']}
         onClick={() => {
-          removeProductFromCart(product.id)
+          handleRemoveFromCart(product.id)
           notification('Produto removido do carrinho!')
         }}
       >
@@ -42,3 +42,5 @@ export const CartItem: FC<ICartItemProps> = ({ product }) => {
     </div >
   )
 }
+
+export const CartItem = memo(CartItemComponent);

@@ -30,8 +30,8 @@ export const CartComponent = () => {
               key={product.id}
               product={product}
               decreaseProductQuantity={decreaseProductQuantity}
-              addToCart={addToCart}
-              removeProductFromCart={removeProductFromCart
+              handleAddToCart={addToCart}
+              handleRemoveFromCart={removeProductFromCart
               } />
           ))
         }

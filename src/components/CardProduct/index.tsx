@@ -23,7 +23,7 @@ const CardProductComponent: FC<CardProductProps> = ({
         <FavoriteIcon
           product={product}
           handleFavoriteProduct={handleAddToFavorites}
-          handleRemoveFromFavorites={handleRemoveFromCart}
+          handleRemoveFromFavorites={handleRemoveFromFavorites}
         />
       </div>
       <ProductDetails
@@ -34,7 +34,7 @@ const CardProductComponent: FC<CardProductProps> = ({
 
       <CartButton
         product={product}
-        handleRemoveFromCart={handleRemoveFromFavorites}
+        handleRemoveFromCart={handleRemoveFromCart}
         handleAddToCart={handleAddToCart}
         productId={product.id}
       />
