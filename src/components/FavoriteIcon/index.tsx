@@ -1,25 +1,25 @@
 import { HeartFilled, HeartOutlined } from '@ant-design/icons'
-import { FC, useContext } from 'react';
+import { FC } from 'react';
 import styles from './styles.module.css'
 import { IFavoriteProductCardProps } from '../../types/favoriteProduct';
-import { FavoriteContext } from '../../context/favoriteContext';
-import { notification } from '../../utils/notification';
+import { useFavoriteStore } from '../../stores/favoriteStore';
 
-export const FavoriteIcon: FC<IFavoriteProductCardProps> = ({ product, favorites, handleFavoriteProduct }) => {
-  const { removeProductFromFavorites } = useContext(FavoriteContext)
-  const isProductFavorited = (productId: string) => {
-    return favorites.some((item) => item.id === productId);
-  }
-
+export const FavoriteIcon: FC<IFavoriteProductCardProps> = ({ 
+  product, 
+  handleRemoveFromFavorites,
+  handleFavoriteProduct 
+}) => {
+  
+  const { isProductInFavorites } = useFavoriteStore();
+  const isProductFavorited = isProductInFavorites(product.id);
 
   return (
     <>
       {
-        isProductFavorited(product.id) ? (
+        isProductFavorited ? (
           <HeartFilled
-            onClick={() => {
-              removeProductFromFavorites(product.id)
-              notification('Produto removido dos favoritos!')}
+            onClick={() => handleRemoveFromFavorites(product.id)
+          
             }
             style={{
               fontSize: '21px',
@@ -32,10 +32,7 @@ export const FavoriteIcon: FC<IFavoriteProductCardProps> = ({ product, favorites
 
         ) : (
           <HeartOutlined
-            onClick={() => {
-              handleFavoriteProduct(product)
-              notification('Produto adicionado aos favoritos!')
-            }}
+            onClick={() => handleFavoriteProduct(product)}
             style={{ fontSize: '21px' }}
             className={
               `${styles['favorite-icon']} ${styles['favorite-icon--outlined']}`

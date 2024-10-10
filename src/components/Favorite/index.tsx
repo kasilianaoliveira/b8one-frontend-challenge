@@ -1,20 +1,19 @@
-import { useContext } from 'react'
 import styles from './styles.module.css'
-import { FavoriteContext } from '../../context/favoriteContext'
 import { FavoriteItem } from '../FavoriteItem'
+import { useFavoriteStore } from '../../stores/favoriteStore'
 export const Favorite = () => {
-  const { isVisible, toggleFavorite, favorites } = useContext(FavoriteContext)
 
-console.log(isVisible)
+  const {  toggleFavoriteVisibility, favorites, isVisible, removeProductFromFavorites } = useFavoriteStore();
+
   return (
 
     <div className={`${styles['favorite-container']} ${isVisible && styles['favorite-visibility']}`}>
-      <div className={styles['favorite-escape-area']} onClick={toggleFavorite} />
+      <div className={styles['favorite-escape-area']} onClick={toggleFavoriteVisibility} />
       <div className={styles['favorite-content']}>
         <h3 className={styles['favorite-title']}>Seus favoritos</h3>
         {
           favorites.map(product => (
-            <FavoriteItem key={product.id} product={product} />
+            <FavoriteItem key={product.id} product={product} removeProductFromFavorites={removeProductFromFavorites}/>
           ))
         }
 

@@ -1,26 +1,20 @@
 import styles from './styles.module.css';
 import { FavoriteIcon } from '../FavoriteIcon';
 import { ProductDetails } from '../ProductDetails';
-import { AddProductButton } from '../AddProductButton';
-import { FC, useContext } from 'react';
+import { FC, memo } from 'react';
 import { CardProductProps } from '../../types/cardProduct';
-import { CartContext } from '../../context/cartContext';
-import { FavoriteContext } from '../../context/favoriteContext';
-import { notification } from '../../utils/notification';
+import CartButton from '../CartButton';
 
-
-export const CardProduct: FC<CardProductProps> = ({
+const areEqual = (prevProps: CardProductProps, nextProps: CardProductProps) => {
+  return prevProps.product.id === nextProps.product.id;
+};
+const CardProductComponent: FC<CardProductProps> = ({
   product,
-  handleAddProduct,
-  handleFavoriteProduct
+  handleAddToCart,
+  handleAddToFavorites,
+  handleRemoveFromCart,
+  handleRemoveFromFavorites,
 }) => {
-  const { products } = useContext(CartContext)
-  const { favorites } = useContext(FavoriteContext)
-
-
-  const isProductAdded = (productId: string) => {
-    return products.some((item) => item.id === productId);
-  }
 
   return (
     <div className={styles.container}>
@@ -28,8 +22,8 @@ export const CardProduct: FC<CardProductProps> = ({
         <img className={styles['product-image']} src={product.image} alt="Product Image" />
         <FavoriteIcon
           product={product}
-          favorites={favorites}
-          handleFavoriteProduct={handleFavoriteProduct}
+          handleFavoriteProduct={handleAddToFavorites}
+          handleRemoveFromFavorites={handleRemoveFromCart}
         />
       </div>
       <ProductDetails
@@ -38,23 +32,14 @@ export const CardProduct: FC<CardProductProps> = ({
         salePrice={product.salePrice}
       />
 
-      {
-        !isProductAdded(product.id) ? (
-          <AddProductButton
-            onClick={() => {
-              handleAddProduct(product)
-              notification('Produto adicionado ao carrinho!')
-            }}
-
-            isAddButton={true}
-            label="Adicionar" />
-        ) : (
-          <AddProductButton
-            label="Adicionado" />
-        )
-      }
-
+      <CartButton
+        product={product}
+        handleRemoveFromCart={handleRemoveFromFavorites}
+        handleAddToCart={handleAddToCart}
+        productId={product.id}
+      />
 
     </div>
   )
 }
+export const CardProduct = memo(CardProductComponent, areEqual);

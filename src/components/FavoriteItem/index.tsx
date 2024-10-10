@@ -1,18 +1,17 @@
-import { FC, useContext } from 'react';
+import { FC } from 'react';
 import { IProductProps } from '../../types/product';
 import { formatToLocaleString } from '../../utils/formatToLocaleString';
 import styles from './styles.module.css';
 import { CloseOutlined } from '@ant-design/icons';
-import { FavoriteContext } from '../../context/favoriteContext';
 import { notification } from '../../utils/notification';
 
 interface IFavoriteItemProps {
   product: IProductProps;
+  removeProductFromFavorites: (productId: string) => void;
 }
 
-export const FavoriteItem: FC<IFavoriteItemProps> = ({ product }) => {
+export const FavoriteItem: FC<IFavoriteItemProps> = ({ product, removeProductFromFavorites }) => {
   const salePriceConverted = formatToLocaleString(product.salePrice)
-  const { removeProductFromFavorites } = useContext(FavoriteContext)
 
   return (
     <div className={styles['favorite-item-container']}>
