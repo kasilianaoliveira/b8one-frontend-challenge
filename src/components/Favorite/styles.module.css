@@ -44,6 +44,7 @@
 .favorite-content {
   z-index: 200;
   height: 100%;
+  width: 600px;
   background-color: var(--white);
   padding: 20px;
   overflow-y: scroll;
