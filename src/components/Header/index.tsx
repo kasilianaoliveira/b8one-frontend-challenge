@@ -1,19 +1,21 @@
 import { HeartOutlined, ShoppingCartOutlined } from '@ant-design/icons'
 import LogoImg from '../../assets/logo.webp'
 import styles from "./styles.module.css"
-import { useContext } from 'react'
-import { CartContext } from '../../context/cartContext'
-import { FavoriteContext } from '../../context/favoriteContext'
+import { useCartStore } from '../../stores/cartStore'
+import { useFavoriteStore } from '../../stores/favoriteStore'
+
 export const Header = () => {
-  const { toggleCart, productCount } = useContext(CartContext)
-  const { toggleFavorite, favorites } = useContext(FavoriteContext)
+
+  const {  toggleCart, productCount } = useCartStore();
+  const {  toggleFavoriteVisibility, favorites } = useFavoriteStore();
+
 
   return (
     <header className={styles.container}>
       <nav className={styles['content-wrapper']}>
         <img className={styles.logo} src={LogoImg} alt="Logo da Loja Virtual" />
         <ul className={styles['cart-container']}>
-          <li onClick={toggleFavorite}>
+          <li onClick={toggleFavoriteVisibility}>
             <HeartOutlined/>
             <span className={styles['cart-quantity']}>{favorites.length}</span>
           </li>
