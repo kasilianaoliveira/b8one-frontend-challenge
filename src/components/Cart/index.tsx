@@ -1,23 +1,38 @@
-import { useContext } from 'react'
+import { memo } from 'react'
 import { CartItem } from '../CartItem'
 import styles from './styles.module.css'
-import { CartContext } from '../../context/cartContext'
 import { formatToLocaleString } from '../../utils/formatToLocaleString'
-export const Cart = () => {
-  const { isVisible, toggleCart, products, productsTotalPrice, productCount } = useContext(CartContext)
+import { useCartStore } from '../../stores/cartStore'
+
+export const CartComponent = () => {
+  const { 
+    cart,
+    productsTotalPrice,
+    productCount,
+    decreaseProductQuantity,
+    addToCart,
+    removeProductFromCart,
+    isCartVisible,
+    toggleCart
+  } = useCartStore();
 
   const filterPrice = formatToLocaleString(productsTotalPrice)
 
-
   return (
 
-    <div className={`${styles['cart-container']} ${isVisible && styles['cart-visibility']}`}>
-      <div className={styles['cart-escape-area']} onClick={toggleCart}/>
+    <div className={`${styles['cart-container']} ${isCartVisible && styles['cart-visibility']}`}>
+      <div className={styles['cart-escape-area']} onClick={toggleCart} />
       <div className={styles['cart-content']}>
         <h3 className={styles['cart-title']}>Seu Carrinho</h3>
         {
-          products.map(product => (
-            <CartItem key={product.id} product={product} />
+          cart.map(product => (
+            <CartItem
+              key={product.id}
+              product={product}
+              decreaseProductQuantity={decreaseProductQuantity}
+              addToCart={addToCart}
+              removeProductFromCart={removeProductFromCart
+              } />
           ))
         }
 
@@ -34,3 +49,5 @@ export const Cart = () => {
     </div>
   )
 }
+
+export const Cart = memo(CartComponent);
