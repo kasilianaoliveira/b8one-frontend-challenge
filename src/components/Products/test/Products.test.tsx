@@ -3,15 +3,12 @@ import {
   fireEvent,
   render,
   screen,
-  waitFor,
 } from '@testing-library/react'
 import { Products } from ".."
 
 const renderComponent = (component: React.ReactNode) => {
   return render(
-    <>
-      {component}
-    </>
+    component
   )
 }
 
