@@ -2,8 +2,11 @@ name: Continuos Integration
 
 on: [pull_request, push]
 jobs:
-  test:
+  ci:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pull-requests: write
 
     steps:
       - uses: actions/checkout@v3
